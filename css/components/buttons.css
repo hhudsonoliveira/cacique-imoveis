@@ -1,0 +1,365 @@
+/* ============================================
+   BUTTONS - Cacique Imóveis
+   ============================================ */
+
+/* ========================================
+   BASE BUTTON STYLES
+   ======================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid transparent;
+    padding: 14px 28px;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   BUTTON VARIANTS
+   ======================================== */
+
+/* Primary Button (Laranja) */
+.btn-primary {
+    background-color: var(--laranja-primario);
+    color: var(--branco);
+    border-color: var(--laranja-primario);
+}
+
+.btn-primary:hover {
+    background-color: #e55a2a;
+    border-color: #e55a2a;
+}
+
+/* Secondary Button (Outline Branco) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--branco);
+    border-color: var(--branco);
+}
+
+.btn-secondary:hover {
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+}
+
+/* Outline Button */
+.btn-outline {
+    background-color: transparent;
+    color: var(--azul-escuro);
+    border-color: var(--azul-escuro);
+}
+
+.btn-outline:hover {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+    background-color: var(--verde-whatsapp);
+    color: var(--branco);
+    border-color: var(--verde-whatsapp);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1fba57;
+    border-color: #1fba57);
+}
+
+.btn-whatsapp-outline {
+    background-color: transparent;
+    color: var(--verde-whatsapp);
+    border-color: var(--verde-whatsapp);
+}
+
+.btn-whatsapp-outline:hover {
+    background-color: var(--verde-whatsapp);
+    color: var(--branco);
+}
+
+/* Instagram Button */
+.btn-instagram {
+    background: var(--gradient-instagram);
+    color: var(--branco);
+    border-color: transparent;
+}
+
+.btn-instagram:hover {
+    opacity: 0.9;
+}
+
+/* ========================================
+   BUTTON SIZES
+   ======================================== */
+.btn-sm {
+    padding: 10px 20px;
+    font-size: var(--text-sm);
+}
+
+.btn-lg {
+    padding: 18px 36px;
+    font-size: var(--text-lg);
+}
+
+.btn-xl {
+    padding: 22px 44px;
+    font-size: var(--text-xl);
+}
+
+/* ========================================
+   BUTTON BLOCK (Full Width)
+   ======================================== */
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+/* ========================================
+   ICON BUTTONS
+   ======================================== */
+.btn-icon {
+    padding: 12px;
+    border-radius: var(--radius-full);
+}
+
+.btn-icon.btn-sm {
+    padding: 8px;
+}
+
+.btn-icon.btn-lg {
+    padding: 16px;
+}
+
+.icon-whatsapp {
+    width: 20px;
+    height: 20px;
+}
+
+/* ========================================
+   BUTTON GROUPS
+   ======================================== */
+.btn-group {
+    display: inline-flex;
+    gap: var(--spacing-md);
+}
+
+.btn-group .btn {
+    margin: 0;
+}
+
+/* ========================================
+   FLOATING BUTTONS
+   ======================================== */
+.floating-whatsapp,
+.floating-instagram {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--floating-btn-size);
+    height: var(--floating-btn-size);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-xl);
+    z-index: var(--z-floating-buttons);
+    transition: all var(--transition-normal);
+}
+
+.floating-whatsapp:hover,
+.floating-instagram:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* WhatsApp Principal */
+.floating-whatsapp {
+    bottom: var(--floating-btn-bottom);
+    right: var(--floating-btn-right);
+    background-color: var(--verde-whatsapp);
+    color: var(--branco);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.floating-whatsapp:hover {
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+}
+
+/* Instagram Button */
+.floating-instagram {
+    background: var(--gradient-instagram);
+    color: var(--branco);
+    right: var(--floating-btn-right);
+    bottom: calc(var(--floating-btn-bottom) + var(--floating-btn-gap));
+}
+
+.floating-instagram:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(188, 24, 136, 0.6);
+}
+
+/* Tooltip para Floating Buttons */
+.floating-whatsapp .tooltip,
+.floating-instagram .tooltip {
+    position: absolute;
+    right: 70px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--cinza-800);
+    color: var(--branco);
+    font-size: var(--text-sm);
+    white-space: nowrap;
+    border-radius: var(--radius-md);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+}
+
+.floating-whatsapp:hover .tooltip,
+.floating-instagram:hover .tooltip {
+    opacity: 1;
+}
+
+/* Tooltip Arrow */
+.floating-whatsapp .tooltip::after,
+.floating-instagram .tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid var(--cinza-800);
+}
+
+/* Scroll To Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: var(--floating-btn-bottom);
+    left: var(--floating-btn-bottom);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--laranja-primario);
+    color: var(--branco);
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: all var(--transition-normal);
+    z-index: var(--z-fixed);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background-color: #e55a2a;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ========================================
+   PULSE ANIMATION
+   ======================================== */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .btn {
+        padding: 12px 24px;
+        font-size: var(--text-sm);
+    }
+
+    .btn-lg {
+        padding: 16px 32px;
+        font-size: var(--text-base);
+    }
+
+    .btn-xl {
+        padding: 18px 36px;
+        font-size: var(--text-lg);
+    }
+
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+    }
+
+    /* Floating buttons mobile */
+    .floating-whatsapp,
+    .floating-instagram {
+        width: var(--floating-btn-size-mobile);
+        height: var(--floating-btn-size-mobile);
+    }
+
+    /* Hide tooltips on mobile */
+    .floating-whatsapp .tooltip,
+    .floating-instagram .tooltip {
+        display: none;
+    }
+
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-block {
+        width: 100%;
+    }
+
+    .btn-header {
+        display: none; /* Hide header CTA on very small screens */
+    }
+}

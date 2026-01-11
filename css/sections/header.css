@@ -1,0 +1,228 @@
+/* ============================================
+   HEADER - Cacique Imóveis
+   ============================================ */
+
+/* ========================================
+   HEADER PRINCIPAL
+   ======================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--branco);
+    box-shadow: var(--shadow-sm);
+    z-index: var(--z-fixed);
+    transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+}
+
+/* ========================================
+   LOGO
+   ======================================== */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    transition: transform var(--transition-normal);
+}
+
+.navbar-brand:hover .logo {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   MENU DE NAVEGAÇÃO
+   ======================================== */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    position: relative;
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--azul-escuro);
+    text-decoration: none;
+    padding: var(--spacing-sm) 0;
+    transition: color var(--transition-normal);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--laranja-primario);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--laranja-primario);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ========================================
+   MENU TOGGLE (Hambúrguer)
+   ======================================== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: var(--z-fixed);
+}
+
+.hamburger {
+    width: 100%;
+    height: 3px;
+    background-color: var(--azul-escuro);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-normal);
+    transform-origin: center;
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+@media (max-width: 1024px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background-color: var(--branco);
+        box-shadow: var(--shadow-xl);
+        padding: var(--spacing-xl);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+    }
+
+    .nav-menu.active {
+        max-height: calc(100vh - 70px);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid var(--cinza-200);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        width: 100%;
+        padding: var(--spacing-lg) 0;
+        font-size: var(--text-lg);
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .btn-header {
+        margin-top: var(--spacing-lg);
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding-top: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .header {
+        height: 70px;
+    }
+
+    .nav-menu {
+        top: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-toggle {
+        width: 26px;
+        height: 20px;
+    }
+
+    .hamburger {
+        height: 2px;
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}

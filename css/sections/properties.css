@@ -1,0 +1,236 @@
+/* ============================================
+   PROPERTIES SECTION - Cacique Imóveis
+   ============================================ */
+
+/* Estilos adicionais específicos para properties que não estão em cards.css ou hero.css */
+
+/* ========================================
+   PROPERTIES FILTERS
+   ======================================== */
+.properties-filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-3xl);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    font-family: var(--font-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--cinza-600);
+    background-color: var(--branco);
+    border: 2px solid var(--cinza-200);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.filter-btn:hover {
+    border-color: var(--laranja-primario);
+    color: var(--laranja-primario);
+}
+
+.filter-btn.active {
+    background-color: var(--laranja-primario);
+    border-color: var(--laranja-primario);
+    color: var(--branco);
+}
+
+/* ========================================
+   PROPERTY LIST VIEW
+   ======================================== */
+.property-list-view {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.property-list-item {
+    display: grid;
+    grid-template-columns: 350px 1fr auto;
+    gap: var(--spacing-xl);
+    background-color: var(--branco);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.property-list-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.property-list-image {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+}
+
+.property-list-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.property-list-content {
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.property-list-actions {
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-md);
+    border-left: 1px solid var(--cinza-200);
+}
+
+/* ========================================
+   VIEW TOGGLE
+   ======================================== */
+.view-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: var(--branco);
+    padding: 6px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.view-btn {
+    padding: 10px 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--cinza-600);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.view-btn:hover {
+    background-color: var(--cinza-100);
+}
+
+.view-btn.active {
+    background-color: var(--laranja-primario);
+    color: var(--branco);
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-3xl);
+}
+
+.pagination-btn {
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--spacing-md);
+    font-weight: var(--font-medium);
+    color: var(--azul-escuro);
+    background-color: var(--branco);
+    border: 2px solid var(--cinza-200);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.pagination-btn:hover:not(:disabled) {
+    border-color: var(--laranja-primario);
+    color: var(--laranja-primario);
+}
+
+.pagination-btn.active {
+    background-color: var(--laranja-primario);
+    border-color: var(--laranja-primario);
+    color: var(--branco);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-4xl) var(--spacing-lg);
+}
+
+.empty-state-icon {
+    font-size: var(--text-6xl);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.5;
+}
+
+.empty-state-title {
+    font-size: var(--text-2xl);
+    color: var(--azul-escuro);
+    margin-bottom: var(--spacing-md);
+}
+
+.empty-state-description {
+    font-size: var(--text-lg);
+    color: var(--cinza-600);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+    .property-list-item {
+        grid-template-columns: 250px 1fr;
+    }
+
+    .property-list-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        border-left: none;
+        border-top: 1px solid var(--cinza-200);
+    }
+}
+
+@media (max-width: 768px) {
+    .properties-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: var(--spacing-sm);
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+    }
+
+    .property-list-item {
+        grid-template-columns: 1fr;
+    }
+
+    .property-list-image {
+        min-height: 200px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+}

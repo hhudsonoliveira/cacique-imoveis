@@ -1,0 +1,281 @@
+/* ============================================
+   FOOTER - Cacique Imóveis
+   ============================================ */
+
+/* ========================================
+   FOOTER PRINCIPAL
+   ======================================== */
+.footer {
+    background-color: var(--azul-escuro);
+    color: var(--cinza-200);
+    padding: var(--spacing-4xl) 0 var(--spacing-xl);
+}
+
+/* ========================================
+   FOOTER GRID
+   ======================================== */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* ========================================
+   FOOTER LOGO
+   ======================================== */
+.footer-logo {
+    height: 50px;
+    width: auto;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-about {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--cinza-200);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-creci {
+    font-size: var(--text-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-creci p {
+    margin: 0;
+    padding: 4px 0;
+    color: var(--branco);
+}
+
+/* ========================================
+   FOOTER SOCIAL
+   ======================================== */
+.footer-social {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    color: var(--branco);
+    transition: all var(--transition-normal);
+}
+
+.footer-social a:hover {
+    background-color: var(--laranja-primario);
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   FOOTER TITLE
+   ======================================== */
+.footer-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--branco);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ========================================
+   FOOTER LINKS
+   ======================================== */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links a {
+    font-size: var(--text-sm);
+    color: var(--cinza-200);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--laranja-primario);
+    transform: translateX(4px);
+}
+
+/* ========================================
+   FOOTER CONTACT
+   ======================================== */
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+}
+
+.footer-contact strong {
+    display: block;
+    color: var(--branco);
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-semibold);
+}
+
+.footer-contact a {
+    color: var(--cinza-200);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.footer-contact a:hover {
+    color: var(--laranja-primario);
+}
+
+/* ========================================
+   FOOTER BADGES
+   ======================================== */
+.footer-badges {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.cert-badge {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    color: var(--branco);
+    text-align: center;
+}
+
+/* ========================================
+   FOOTER PAYMENT
+   ======================================== */
+.footer-payment {
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-payment strong {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--branco);
+    margin-bottom: var(--spacing-sm);
+}
+
+.payment-methods {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.payment-methods span {
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    color: var(--cinza-200);
+}
+
+/* ========================================
+   FOOTER LEGAL
+   ======================================== */
+.footer-legal {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.footer-legal a {
+    font-size: var(--text-xs);
+    color: var(--cinza-400);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.footer-legal a:hover {
+    color: var(--branco);
+}
+
+/* ========================================
+   FOOTER BOTTOM
+   ======================================== */
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-xl);
+}
+
+.footer-bottom p {
+    font-size: var(--text-sm);
+    color: var(--cinza-400);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-bottom strong {
+    color: var(--branco);
+    font-weight: var(--font-semibold);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-2xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-3xl) 0 var(--spacing-lg);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-2xl);
+        padding-bottom: var(--spacing-2xl);
+    }
+
+    .footer-col {
+        gap: var(--spacing-md);
+    }
+
+    .footer-logo {
+        height: 40px;
+    }
+
+    .footer-social {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-bottom {
+        font-size: var(--text-xs);
+    }
+
+    .payment-methods {
+        justify-content: center;
+    }
+}

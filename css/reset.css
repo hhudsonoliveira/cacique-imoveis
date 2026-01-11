@@ -1,0 +1,114 @@
+/* ============================================
+   CSS RESET - Cacique Imóveis
+   ============================================ */
+
+/* Box sizing border-box para todos os elementos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove margens e paddings padrão */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol, li,
+figure, figcaption,
+blockquote,
+dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove estilo de lista padrão */
+ul, ol {
+    list-style: none;
+}
+
+/* Configurações de root */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Configurações de body */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove decoração de links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Torna imagens mais fáceis de trabalhar */
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* Herda fonts para inputs e buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove animações para pessoas que preferirem */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Remove bordas padrão de botões */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Remove setas de input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Remove aparência padrão de input search */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+/* Remove outline padrão mas mantém para acessibilidade via teclado */
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--laranja-primario);
+    outline-offset: 2px;
+}

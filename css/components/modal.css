@@ -1,0 +1,445 @@
+/* ============================================
+   MODAL - Cacique Imóveis
+   ============================================ */
+
+/* ========================================
+   MODAL BACKDROP
+   ======================================== */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: var(--z-modal-backdrop);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========================================
+   MODAL CONTAINER
+   ======================================== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========================================
+   MODAL CONTENT
+   ======================================== */
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    background-color: var(--branco);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-2xl);
+    overflow: hidden;
+    transform: scale(0.9) translateY(20px);
+    transition: transform var(--transition-normal);
+}
+
+.modal.show .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* ========================================
+   MODAL HEADER
+   ======================================== */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-xl);
+    border-bottom: 1px solid var(--cinza-200);
+}
+
+.modal-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--azul-escuro);
+    margin: 0;
+}
+
+.modal-close {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--radius-full);
+    color: var(--cinza-600);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.modal-close:hover {
+    background-color: var(--cinza-100);
+    color: var(--azul-escuro);
+}
+
+/* ========================================
+   MODAL BODY
+   ======================================== */
+.modal-body {
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+    max-height: calc(90vh - 160px);
+}
+
+/* Custom scrollbar para modal */
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: var(--cinza-100);
+    border-radius: var(--radius-full);
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: var(--cinza-400);
+    border-radius: var(--radius-full);
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--cinza-600);
+}
+
+/* ========================================
+   MODAL FOOTER
+   ======================================== */
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+    border-top: 1px solid var(--cinza-200);
+}
+
+/* ========================================
+   PROPERTY MODAL ESPECÍFICO
+   ======================================== */
+.property-modal .modal-content {
+    max-width: 1200px;
+}
+
+.property-modal-gallery {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--cinza-800);
+}
+
+.property-modal-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    z-index: 2;
+}
+
+.gallery-nav:hover {
+    background-color: var(--branco);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.prev {
+    left: var(--spacing-lg);
+}
+
+.gallery-nav.next {
+    right: var(--spacing-lg);
+}
+
+.gallery-dots {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-sm);
+    z-index: 2;
+}
+
+.gallery-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.gallery-dot.active,
+.gallery-dot:hover {
+    background-color: var(--branco);
+    transform: scale(1.3);
+}
+
+.property-modal-details {
+    padding: var(--spacing-xl);
+}
+
+.property-modal-price {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--laranja-primario);
+    margin-bottom: var(--spacing-lg);
+}
+
+.property-modal-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--cinza-100);
+    border-radius: var(--radius-md);
+}
+
+.feature-icon {
+    font-size: var(--text-2xl);
+}
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-label {
+    font-size: var(--text-xs);
+    color: var(--cinza-600);
+}
+
+.feature-value {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--azul-escuro);
+}
+
+.property-modal-description {
+    margin-bottom: var(--spacing-xl);
+}
+
+.property-modal-description h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.property-modal-description p {
+    line-height: var(--leading-relaxed);
+}
+
+/* ========================================
+   TOAST NOTIFICATIONS
+   ======================================== */
+.toast-container {
+    position: fixed;
+    top: var(--spacing-xl);
+    right: var(--spacing-xl);
+    z-index: var(--z-toast);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    min-width: 300px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--branco);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all var(--transition-normal);
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast.hide {
+    transform: translateX(400px);
+    opacity: 0;
+}
+
+.toast-icon {
+    font-size: var(--text-2xl);
+}
+
+.toast-success {
+    border-left: 4px solid var(--sucesso);
+}
+
+.toast-success .toast-icon {
+    color: var(--sucesso);
+}
+
+.toast-error {
+    border-left: 4px solid var(--erro);
+}
+
+.toast-error .toast-icon {
+    color: var(--erro);
+}
+
+.toast-info {
+    border-left: 4px solid var(--info);
+}
+
+.toast-info .toast-icon {
+    color: var(--info);
+}
+
+.toast-warning {
+    border-left: 4px solid var(--aviso);
+}
+
+.toast-warning .toast-icon {
+    color: var(--aviso);
+}
+
+.toast-content {
+    flex: 1;
+}
+
+.toast-title {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--azul-escuro);
+    margin-bottom: var(--spacing-xs);
+}
+
+.toast-message {
+    font-size: var(--text-sm);
+    color: var(--cinza-600);
+}
+
+.toast-close {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    color: var(--cinza-600);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.toast-close:hover {
+    background-color: var(--cinza-100);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .modal {
+        padding: 0;
+    }
+
+    .modal-content {
+        max-width: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: var(--spacing-lg);
+    }
+
+    .modal-title {
+        font-size: var(--text-xl);
+    }
+
+    .property-modal-features {
+        grid-template-columns: 1fr;
+    }
+
+    .property-modal-price {
+        font-size: var(--text-3xl);
+    }
+
+    .gallery-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .gallery-nav.prev {
+        left: var(--spacing-md);
+    }
+
+    .gallery-nav.next {
+        right: var(--spacing-md);
+    }
+
+    .toast-container {
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+        left: var(--spacing-md);
+    }
+
+    .toast {
+        min-width: auto;
+        width: 100%;
+    }
+}

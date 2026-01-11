@@ -1,0 +1,36 @@
+# robots.txt - Cacique Imóveis
+# Instruções para crawlers de mecanismos de busca
+
+# Permitir todos os bots
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.caciqueimoveis.com.br/sitemap.xml
+
+# Bloquear áreas administrativas (se houver no futuro)
+# Disallow: /admin/
+# Disallow: /login/
+
+# Crawl-delay (opcional - útil para servidores com recursos limitados)
+# Crawl-delay: 10
+
+# Bots específicos do Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Bots de mídia social para preview de links
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /

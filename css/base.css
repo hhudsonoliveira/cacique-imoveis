@@ -1,0 +1,394 @@
+/* ============================================
+   BASE STYLES - Cacique Imóveis
+   ============================================ */
+
+/* ========================================
+   BODY E HTML
+   ======================================== */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-normal);
+    color: var(--cinza-800);
+    background-color: var(--branco);
+    overflow-x: hidden;
+}
+
+/* ========================================
+   TIPOGRAFIA
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--azul-escuro);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: var(--font-extrabold);
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 36px);
+}
+
+h3 {
+    font-size: clamp(24px, 3vw, 28px);
+}
+
+h4 {
+    font-size: var(--text-2xl);
+}
+
+h5 {
+    font-size: var(--text-xl);
+}
+
+h6 {
+    font-size: var(--text-lg);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--cinza-600);
+}
+
+strong {
+    font-weight: var(--font-bold);
+    color: var(--azul-escuro);
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* ========================================
+   SEÇÃO HEADER
+   ======================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.section-pretitle {
+    display: inline-block;
+    font-family: var(--font-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--laranja-primario);
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-title {
+    font-size: clamp(28px, 4vw, 36px);
+    color: var(--azul-escuro);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--cinza-600);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   SKIP TO CONTENT (Acessibilidade)
+   ======================================== */
+.skip-to-content {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+}
+
+.skip-to-content:focus {
+    left: var(--spacing-md);
+    top: var(--spacing-md);
+}
+
+/* ========================================
+   UTILITÁRIOS
+   ======================================== */
+
+/* Texto */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Display */
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-grid {
+    display: grid !important;
+}
+
+/* Margens */
+.mt-auto {
+    margin-top: auto;
+}
+
+.mb-auto {
+    margin-bottom: auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cores de texto */
+.text-primary {
+    color: var(--laranja-primario);
+}
+
+.text-secondary {
+    color: var(--azul-escuro);
+}
+
+.text-white {
+    color: var(--branco);
+}
+
+.text-muted {
+    color: var(--cinza-600);
+}
+
+/* Background */
+.bg-primary {
+    background-color: var(--laranja-primario);
+}
+
+.bg-secondary {
+    background-color: var(--azul-escuro);
+}
+
+.bg-light {
+    background-color: var(--cinza-100);
+}
+
+.bg-white {
+    background-color: var(--branco);
+}
+
+/* ========================================
+   SELEÇÃO DE TEXTO
+   ======================================== */
+::selection {
+    background-color: var(--laranja-primario);
+    color: var(--branco);
+}
+
+::-moz-selection {
+    background-color: var(--laranja-primario);
+    color: var(--branco);
+}
+
+/* ========================================
+   SCROLLBAR CUSTOMIZADA
+   ======================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cinza-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--laranja-primario);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e55a2a;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--laranja-primario) var(--cinza-100);
+}
+
+/* ========================================
+   LOADING STATES
+   ======================================== */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: wait;
+}
+
+/* Spinner de loading */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--cinza-200);
+    border-top-color: var(--laranja-primario);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+/* ========================================
+   FOCUS VISIBLE
+   ======================================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--laranja-primario);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   IMAGENS E ÍCONES
+   ======================================== */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+svg {
+    vertical-align: middle;
+}
+
+/* ========================================
+   TRANSIÇÕES GLOBAIS
+   ======================================== */
+a,
+button,
+input,
+select,
+textarea {
+    transition: all var(--transition-normal);
+}
+
+/* ========================================
+   RESPONSIVIDADE DE CONTAINER
+   ======================================== */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-2xl);
+    }
+}
+
+/* ========================================
+   GRID SYSTEM (para uso geral)
+   ======================================== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--spacing-md) * -1);
+    margin-right: calc(var(--spacing-md) * -1);
+}
+
+.col {
+    flex: 1;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}
