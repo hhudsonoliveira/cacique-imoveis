@@ -64,6 +64,10 @@
     opacity: 0.95;
 }
 
+.hero-subtitle strong {
+    color: var(--branco);
+}
+
 .hero-slogan {
     font-size: var(--text-lg);
     color: var(--cinza-100);
