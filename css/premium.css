@@ -1,0 +1,279 @@
+/* ============================================
+   PREMIUM STYLES - Cacique Imóveis
+   Design Sofisticado e Elegante
+   ============================================ */
+
+/* ========================================
+   GLASSMORPHISM - CARDS
+   ======================================== */
+.property-card,
+.category-card,
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: var(--shadow-elegant);
+    transition: all var(--transition-normal);
+}
+
+.property-card:hover,
+.category-card:hover,
+.testimonial-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* ========================================
+   SEÇÕES - LINHAS DECORATIVAS DOURADAS
+   ======================================== */
+.section-title::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--gradient-dourado);
+    margin: 0 auto 1.5rem;
+}
+
+.section-title {
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* ========================================
+   BADGES PREMIUM
+   ======================================== */
+.property-badge,
+.category-badge {
+    background: rgba(212, 175, 55, 0.1) !important;
+    border: 1px solid var(--dourado-elegante);
+    color: var(--dourado-elegante) !important;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+}
+
+/* Badge CRECI com dourado */
+.creci-badge {
+    background: var(--gradient-azul-premium) !important;
+    border: 2px solid var(--dourado-elegante);
+    color: var(--dourado-elegante) !important;
+}
+
+/* ========================================
+   PREÇOS COM DESTAQUE
+   ======================================== */
+.price-value {
+    font-family: var(--font-primary);
+    font-size: 32px !important;
+    font-weight: 600;
+    background: var(--gradient-dourado);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   BOTÕES PREMIUM
+   ======================================== */
+.btn-primary,
+.btn {
+    background: var(--gradient-azul-premium);
+    color: var(--dourado-elegante);
+    border: 1px solid var(--dourado-elegante);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all var(--transition-normal);
+}
+
+.btn-primary:hover,
+.btn:hover {
+    background: var(--gradient-dourado);
+    color: var(--azul-marinho);
+    border-color: var(--dourado-elegante);
+    box-shadow: var(--shadow-dourado);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--azul-escuro);
+    border: 1px solid var(--azul-escuro);
+}
+
+.btn-outline:hover {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    border-color: var(--azul-escuro);
+}
+
+.btn-whatsapp {
+    background: var(--verde-whatsapp);
+    border: none;
+    color: var(--branco);
+}
+
+.btn-whatsapp:hover {
+    background: #20bd5a;
+    color: var(--branco);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* ========================================
+   NAVEGAÇÃO PREMIUM
+   ======================================== */
+.navbar {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--azul-escuro);
+    transition: all var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--dourado-elegante);
+}
+
+/* ========================================
+   HERO PREMIUM
+   ======================================== */
+.hero {
+    background-blend-mode: multiply;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* ========================================
+   IMAGENS COM OVERLAY ELEGANTE
+   ======================================== */
+.property-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(26, 35, 50, 0.3) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.property-image img {
+    transition: transform var(--transition-slow);
+}
+
+.property-card:hover .property-image img {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   SEARCH BOX PREMIUM
+   ======================================== */
+.search-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* ========================================
+   FOOTER COM BORDAS DOURADAS
+   ======================================== */
+.footer {
+    border-top: 2px solid var(--dourado-elegante);
+}
+
+/* ========================================
+   STATS COM GRADIENTE
+   ======================================== */
+.stat-number {
+    background: var(--gradient-dourado);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   FORMULÁRIOS ELEGANTES
+   ======================================== */
+.form-input,
+.form-select,
+.form-textarea {
+    border: 1px solid var(--cinza-300);
+    transition: all var(--transition-normal);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--dourado-elegante);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* ========================================
+   CARDS DE DEPOIMENTOS
+   ======================================== */
+.testimonial-stars {
+    color: var(--dourado-elegante);
+}
+
+/* ========================================
+   INSTAGRAM GRID
+   ======================================== */
+.instagram-post {
+    border: 2px solid transparent;
+    transition: all var(--transition-normal);
+}
+
+.instagram-post:hover {
+    border-color: var(--dourado-elegante);
+}
+
+/* ========================================
+   CATEGORIA CARDS
+   ======================================== */
+.category-card {
+    border-left: 3px solid transparent;
+    transition: all var(--transition-normal);
+}
+
+.category-card:hover {
+    border-left-color: var(--dourado-elegante);
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+   ======================================== */
+@media (max-width: 768px) {
+    .property-card,
+    .category-card,
+    .testimonial-card {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .price-value {
+        font-size: 24px !important;
+    }
+}
